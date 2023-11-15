@@ -18,37 +18,55 @@
 <body>
 <nav th:fragment="menu" class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Essalud</a>
+        <a class="navbar-brand" href="#">EsSalud</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/home}">Inicio</a>
-                </li>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Mantenimientos
+                    <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Cita Medica
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" th:href="@{/administracion/home/home}">Home</a></li>
-                        <li><a class="dropdown-item" th:href="@{/sede/frmSede}">Sede</a></li>
-                        <li><a class="dropdown-item" th:href="@{/paciente}">Paciente</a></li>
-                        <li><a class="dropdown-item" th:href="@{/administracion/frmMedico/frmMedico}">Medico</a></li>
-                        <li><a class="dropdown-item" th:href="@{/administracion/frmHorario/frmHorario}">Horario</a></li>
-                        <li><a class="dropdown-item" th:href="@{/administracion/frmCita/frmCita}">Cita</a></li>
+                        <li><a class="dropdown-item" th:href="@{/cita}">Cita</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Test de dropdown</a></li>
+                        <li><a class="dropdown-item" th:href="@{/medico}">Medico</a></li>
+                        <li><a class="dropdown-item" th:href="@{/horario}">Horario</a></li>
+
                     </ul>
                 </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Pacientes
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Mantenimiento Paciente</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/sede}">Sede</a>
+                </li>
+
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-light" type="submit">Search</button>
+            <form class="d-flex" >
+
+                <nav class="navbar bg-body-tertiary">
+                    <form class="container-fluid">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </form>
+                </nav>
             </form>
         </div>
     </div>
+
 </nav>
 </body>
 </html>

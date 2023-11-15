@@ -1,4 +1,4 @@
-package tryprex.com.proyectointegrador.controller;
+package tryprex.com.proyectointegrador.controller.administracion;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class LoginController {
 
     @GetMapping("/login")
-    public String home(){
+    public String index(){
         return "login";
     }
+
 }
