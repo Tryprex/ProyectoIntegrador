@@ -1,4 +1,4 @@
-package tryprex.com.proyectointegrador.controller.aministracion;
+package tryprex.com.proyectointegrador.controller.administracion;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @AllArgsConstructor
 @Controller
-@RequestMapping("/administracion/frmHorario")
+@RequestMapping("/horario")
 public class HorarioController {
-    @GetMapping("/frmHorario")
-    public String frmHorario(){
+    @GetMapping("")
+    public String index(){
         return "/administracion/frmHorario";
     }
 }

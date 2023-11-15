@@ -3,11 +3,12 @@ package tryprex.com.proyectointegrador.service;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tryprex.com.proyectointegrador.model.bd.*;
-import tryprex.com.proyectointegrador.model.request.PacienteRequest;
+import tryprex.com.proyectointegrador.model.dto.PacienteDto;
 import tryprex.com.proyectointegrador.model.response.ResultadoResponse;
 import tryprex.com.proyectointegrador.repository.PacienteRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @AllArgsConstructor
 @Service
@@ -19,14 +20,12 @@ public class PacienteService {
         return pacienteRepository.findAll();
     }
 
-    public ResultadoResponse guardarPaciente(PacienteRequest paciente) {
+    public ResultadoResponse registrarPaciente(PacienteDto paciente) {
         String mensaje = "Paciente registrado correctamente";
         Boolean respuesta = true;
         try {
             Paciente objPaciente = new Paciente();
-            if (paciente.getIdpaciente() != null) {
-                objPaciente.setIdpaciente(paciente.getIdpaciente());
-            }
+
             TipoDocumento tipodocumento = new TipoDocumento();
             tipodocumento.setIdtipodocumento(paciente.getTipodocumento());
             objPaciente.setTipodocumento(tipodocumento);
@@ -66,4 +65,8 @@ public class PacienteService {
         }
         return ResultadoResponse.builder().mensaje(mensaje).respuesta(respuesta).build();
     }
+
+
+
+
 }
