@@ -18,7 +18,7 @@ public class PacienteController {
 
     @GetMapping("")
     public String index(Model model) {
-        return "administracion/paciente/frmMantPaciente";
+        return "administracion/paciente/frmRegistrarPaciente";
     }
 
     @PostMapping("/guardar")
