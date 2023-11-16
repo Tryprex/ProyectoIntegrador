@@ -69,4 +69,66 @@ public class PacienteService {
 
 
 
+    public ResultadoResponse actualizarPaciente(PacienteDto paciente) {
+        String mensaje = "Paciente actualizado correctamente";
+        Boolean respuesta = true;
+
+        try {
+            Paciente objPaciente = new Paciente();
+
+            // Verificar si el paciente ya existe (por el ID)
+            if (paciente.getIdpaciente() != null) {
+                Optional<Paciente> pacienteExistente = pacienteRepository.findById(paciente.getIdpaciente());
+
+                if (pacienteExistente.isPresent()) {
+                    objPaciente = pacienteExistente.get();
+                } else {
+                    mensaje = "Paciente no encontrado para actualizar";
+                    respuesta = false;
+                    return ResultadoResponse.builder().mensaje(mensaje).respuesta(respuesta).build();
+                }
+            }
+
+            // Actualizar los datos del paciente con la información de la solicitud
+            TipoUsuario tipousuario = new TipoUsuario();
+            tipousuario.setIdtipousuario(paciente.getTipousuario());
+            objPaciente.setTipousuario(tipousuario);
+
+            objPaciente.setDni(paciente.getDni());
+            objPaciente.setNombres(paciente.getNombres());
+            objPaciente.setApellidospa(paciente.getApellidospa());
+            objPaciente.setApellidosma(paciente.getApellidosma());
+            objPaciente.setTelefono(paciente.getTelefono());
+            objPaciente.setFechanacimiento(paciente.getFechanacimiento());
+            objPaciente.setSexo(paciente.getSexo());
+            objPaciente.setPeso(paciente.getPeso());
+            objPaciente.setAltura(paciente.getAltura());
+            objPaciente.setCorreo(paciente.getCorreo());
+            objPaciente.setContrasena(paciente.getContrasena());
+
+            TipoDocumento tipodocumento = new TipoDocumento();
+            tipodocumento.setIdtipodocumento(paciente.getTipodocumento());
+            objPaciente.setTipodocumento(tipodocumento);
+
+            TipoDeSangre tipodesangre = new TipoDeSangre();
+            tipodesangre.setIdtipodesangre(paciente.getTipodesangre());
+            objPaciente.setTipodesangre(tipodesangre);
+
+            Sede sede = new Sede();
+            sede.setIdsede(paciente.getSede());
+            objPaciente.setSede(sede);
+
+            // Guardar el paciente actualizado en la base de datos
+            pacienteRepository.save(objPaciente);
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+            mensaje = "Error al actualizar el paciente";
+            respuesta = false;
+        }
+
+        return ResultadoResponse.builder().mensaje(mensaje).respuesta(respuesta).build();
+    }
+
 }

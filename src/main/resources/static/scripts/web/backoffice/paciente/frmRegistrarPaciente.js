@@ -31,7 +31,7 @@ function listarCboTipoDocumento(idtipodocumento) {
         success: function (resultado) {
             $.each(resultado, function (index, value) {
                 $("#cbotipodocumento").append(
-                    `<option value="${value.idtipodocumento}">${value.tipodocumento}</option>`
+                    `<option value="${value.idtipodocumento}">${value.tipodocumentotipodocumento}</option>`
                 );
             });
             if (idtipodocumento > 0) {
