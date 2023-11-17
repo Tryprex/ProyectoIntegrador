@@ -35,13 +35,13 @@ public class PacienteService {
             objPaciente.setNombres(paciente.getNombres());
             objPaciente.setApellidospa(paciente.getApellidospa());
             objPaciente.setApellidosma(paciente.getApellidosma());
+            objPaciente.setContrasena(paciente.getContrasena());
             objPaciente.setTelefono(paciente.getTelefono());
             objPaciente.setFechanacimiento(paciente.getFechanacimiento());
             objPaciente.setSexo(paciente.getSexo());
             objPaciente.setPeso(paciente.getPeso());
             objPaciente.setAltura(paciente.getAltura());
             objPaciente.setCorreo(paciente.getCorreo());
-            objPaciente.setContrasena(paciente.getContrasena());
 
             TipoUsuario tipousuario = new TipoUsuario();
             tipousuario.setIdtipousuario(paciente.getTipousuario());
