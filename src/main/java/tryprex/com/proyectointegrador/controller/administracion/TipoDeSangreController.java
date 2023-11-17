@@ -1,4 +1,4 @@
-package tryprex.com.proyectointegrador.controller.aministracion;
+package tryprex.com.proyectointegrador.controller.administracion;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;

@@ -1,9 +1,9 @@
-package tryprex.com.proyectointegrador.model.request;
+package tryprex.com.proyectointegrador.model.dto;
 
 import lombok.Data;
 
 @Data
-public class PacienteRequest {
+public class PacienteDto {
     private Integer idpaciente;
     private String dni;
     private String nombres;

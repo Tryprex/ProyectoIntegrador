@@ -1,32 +1,3 @@
-$(document).on("click", "#btnagregar", function(){
-    $("#cbotipodocumento").empty();
-    $("#cbotipousuario").empty();
-    $("#cbotipodesangre").empty();
-    $("#cbosede").empty();
-
-    listarCboTipoDocumento(0);
-    listarCboTiposDeSangre(0);
-    listarCboSedes(0);
-    listarCboTipoUsuario(0);
-
-    $("#hddcodpaciente").val("0");
-
-    $("#txtdni").val("");
-    $("#txtnombres").val("");
-    $("#txtapellidospa").val("");
-    $("#txtapellidosma").val("");
-    $("#txttelefono").val("");
-    $("#txtfechanacimiento").val("");
-    $('input[name="sexo"]').removeAttr('checked');
-    $("#txtpeso").val("");
-    $("#txtaltura").val("");
-    $("#txtcorreo").val("");
-    $("#txtcontrasena").val("");
-
-    // Mostrar el modal
-    $("#modalNuevo").modal("show");
-});
-
 $(document).on("click", ".btnactualizar", function(){
     $("#hddcodpaciente").val($(this).attr("data-idpaciente"));
     $("#cbotipousuario").empty();
@@ -69,13 +40,9 @@ $(document).on("click", ".btnactualizar", function(){
 
 
 $(document).on("click", "#btnguardar", function(){
-    var idpaciente = $("#hddcodpaciente").val();
-
-
-
     $.ajax({
         type: "POST",
-        url: "/paciente/guardar",  // Asegúrate de que la ruta sea la correcta en tu aplicación
+        url: "/gestionpaciente/actualizar",  // Asegúrate de que la ruta sea la correcta en tu aplicación
         contentType: "application/json",
         data: JSON.stringify({
             idpaciente: $("#hddcodpaciente").val(),
@@ -104,7 +71,6 @@ $(document).on("click", "#btnguardar", function(){
     });
     $("#modalNuevo").modal("hide");
 });
-
 
 
 function listarCboSedes(idsede) {
@@ -182,7 +148,7 @@ function listarCboTiposDeSangre(idtipodesangre) {
 function listarPacientes() {
     $.ajax({
         type: "GET",
-        url: "/paciente/listar",
+        url: "/gestionpaciente/listar",
         dataType: "json",
         success: function (resultado) {
             $("#tblpaciente > tbody").html("");
@@ -224,3 +190,4 @@ function listarPacientes() {
         }
     });
 }
+
