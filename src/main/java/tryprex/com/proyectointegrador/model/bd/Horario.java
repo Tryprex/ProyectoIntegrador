@@ -4,18 +4,21 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @NoArgsConstructor
 @Entity
 @Table(name = "horario")
 public class Horario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idHorario;
-    @Column(name = "dni")
-    private String fechaHorario;
-    @Column(name = "nombres")
-    private String nombres;
+    private Integer idhorario;
+
+    @Column(name = "fechahorario")
+    private Date fechaHorario;
+
 
     @ManyToOne
     @JoinColumn(name = "medicoid")

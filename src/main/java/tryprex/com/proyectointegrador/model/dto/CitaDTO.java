@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class CitaDTO {
-    private Integer idcita;
-    private Integer pacienteid;
-    private Integer sedeid;
+
+    private Integer paciente;
+    private Integer sede;
     private Integer horario;
-    private Integer medicoid;
+    private Integer medico;
 }

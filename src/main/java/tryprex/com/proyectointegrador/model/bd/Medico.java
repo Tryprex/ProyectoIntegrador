@@ -15,10 +15,10 @@ public class Medico {
     @Column(name = "nommedico")
     private String nommedico;
     @Column(name = "apellido")
-    private String apellido;
+        private String apellido;
     @Column(name = "dni")
     private String dni;
-    @Column(name = "dni")
+    @Column(name = "cmp")
     private String cmp;
     @ManyToOne
     @JoinColumn(name = "especialidadid")
