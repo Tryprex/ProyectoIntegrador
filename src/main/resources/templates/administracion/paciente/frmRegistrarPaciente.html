@@ -8,62 +8,6 @@
 <script th:src="@{/scripts/web/backoffice/paciente/frmRegistrarPaciente.js}"
         type="text/javascript"></script>
 
-<nav th:fragment="menu" class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">EsSalud</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Cita Medica
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" th:href="@{/administracion/frmCita/frmCita} ">Cita</a></li>
-                        <li><a class="dropdown-item" th:href="@{/historialmedico}">Historial Medico</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" th:href="@{/administracion/frmMedico/frmMedico}">Medico</a></li>
-                        <li><a class="dropdown-item" th:href="@{/administracion/frmHorario/frmHorario}">Horario</a></li>
-
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Pacientes
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" th:href="@{/servicios}">Nuestros Servicios</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" th:href="@{/gestionpaciente}">Mantenimiento Paciente</a></li>
-
-                    </ul>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/sede}">Sede</a>
-                </li>
-
-            </ul>
-            <form class="d-flex" >
-
-                <nav class="navbar bg-body-tertiary">
-                    <form class="container-fluid">
-                        <div class="input-group">
-                            <span class="input-group-text" id="basic-addon1">@</span>
-                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                    </form>
-                </nav>
-            </form>
-        </div>
-    </div>
-
-</nav>
-
 <div class="container py-1 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-xl-10">
