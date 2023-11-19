@@ -131,4 +131,5 @@ public class PacienteService {
         return ResultadoResponse.builder().mensaje(mensaje).respuesta(respuesta).build();
     }
 
+
 }

@@ -29,4 +29,6 @@ public class PacienteController {
         return pacienteService.registrarPaciente(pacienteRequest);
     }
 
+
+
 }

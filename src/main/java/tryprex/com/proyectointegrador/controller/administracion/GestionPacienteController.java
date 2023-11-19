@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import tryprex.com.proyectointegrador.model.bd.Paciente;
 import tryprex.com.proyectointegrador.model.dto.PacienteDto;
 import tryprex.com.proyectointegrador.model.response.ResultadoResponse;

@@ -20,7 +20,7 @@
             <thead class="bg-dark text-white">
             <tr>
                 <th scope="col">TipoDocumento</th>
-                <th scope="col">N° Documento</th>
+                <th scope="col">N° de Documento</th>
                 <th scope="col">Nombres</th>
                 <th scope="col">Apellido Paterno</th>
                 <th scope="col">Apellido Materno</th>
@@ -36,7 +36,7 @@
             </thead>
             <tbody>
             <tr th:each="paciente :${listaPacientes}">
-                    <td th:text="${paciente.tipodocumento.tipodocumento}"></td>
+                <td th:text="${paciente.tipodocumento.tipodocumento}"></td>
                 <td th:text="${paciente.dni}"></td>
                 <td th:text="${paciente.nombres}"></td>
                 <td th:text="${paciente.apellidospa}"></td>
@@ -97,19 +97,23 @@
                 <div class="mb-3">
                     <label for="txtnombres" class="form-label">Nombres:</label>
                     <input type="text" class="form-control" id="txtnombres">
+                    <div id="txtnombres-error" class="error-mensaje text-danger"></div>
                 </div>
 
                 <div class="mb-3">
                     <label for="txtapellidospa" class="form-label">Apellidos Paterno:</label>
                     <input type="text" class="form-control" id="txtapellidospa">
+                    <div id="txtapellidospa-error" class="error-mensaje text-danger"></div>
                 </div>
                 <div class="mb-3">
                     <label for="txtapellidosma" class="form-label">Apellidos Materno:</label>
                     <input type="text" class="form-control" id="txtapellidosma">
+                    <div id="txtapellidosma-error" class="error-mensaje text-danger"></div>
                 </div>
                 <div class="mb-3">
                     <label for="txttelefono" class="form-label">Teléfono:</label>
                     <input type="text" class="form-control" id="txttelefono">
+                    <div id="txttelefono-error" class="error-mensaje text-danger"></div>
                 </div>
                 <div class="mb-3">
                     <label for="txtfechanacimiento" class="form-label">Año de Nacimiento:</label>
@@ -137,20 +141,23 @@
                 <div class="mb-3">
                     <label for="txtpeso" class="form-label">Peso (kg):</label>
                     <input type="text" class="form-control" id="txtpeso">
+                    <div id="txtpeso-error" class="error-mensaje text-danger"></div>
                 </div>
                 <div class="mb-3">
                     <label for="txtaltura" class="form-label">Altura (cm):</label>
                     <input type="text" class="form-control" id="txtaltura">
+                    <div id="txtaltura-error" class="error-mensaje text-danger"></div>
                 </div>
 
                 <div class="mb-3">
                     <label for="txtcorreo" class="form-label">Correo:</label>
                     <input type="text" class="form-control" id="txtcorreo">
+                    <div id="txtcorreo-error" class="error-mensaje text-danger"></div>
                 </div>
 
                 <div class="mb-3">
                     <label for="txtcontrasena" class="form-label">Contrasena:</label>
-                    <input type="text" class="form-control" id="txtcontrasena">
+                    <input type="password" class="form-control" id="txtcontrasena">
                 </div>
 
                 <div class="mb-3">
