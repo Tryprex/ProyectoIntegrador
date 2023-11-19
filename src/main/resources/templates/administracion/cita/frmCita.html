@@ -10,79 +10,61 @@
 <nav th:replace="~{layout::menu}"></nav>
 
 
-<form action="/cita" method="POST">
-    <div class="form-group">
-        <label for="paciente">Selecciona paciente:</label>
-        <select class="form-control" id="paciente" name="paciente">
-            <option th:each="paciente : ${listaPacientes}"
-                    th:value="${paciente.idpaciente}"
-                    th:text="${paciente.nombres + ' ' + paciente.apellidospa + ' ' + paciente.apellidosma}">
-            </option>
-        </select>
 
+    <div class="container py-1 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h4 class="text-center">Registra tu Cita</h4>
+                        <hr>
+                        <div class="row">
+                            <!-- Columna 1 del formulario de registro -->
+                            <div class="col-md-6">
+                                <div>
+                                    <div class="col-md-6">
+                                        <form action="/cita" method="POST">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="paciente">Selecciona paciente:</label>
+                                                <select class="form-select" aria-label="Default select example" id="paciente" name="paciente">
+                                                    <option th:each="paciente : ${listaPacientes}"
+                                                            th:value="${paciente.idpaciente}"
+                                                            th:text="${paciente.nombres + ' ' + paciente.apellidospa + ' ' + paciente.apellidosma}">
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="medico">Selecciona Medico:</label>
+                                                <select class="form-select" aria-label="Default select example" id="medico" name="medico">
+                                                    <option th:each="m : ${listaMedicos}"
+                                                            th:value="${m.idmedico}" th:text="${m.nommedico + ' ' + m.apellido}">
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="horario">Selecciona Horario:</label>
+                                                <select class="form-select" aria-label="Default select example" id="horario" name="horario">
+                                                    <option th:each="h : ${listaHorarios}"
+                                                            th:value="${h.idhorario}" th:text="${h.fechaHorario}">
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="horario">Selecciona Sedes:</label>
+                                                <select class="form-select" aria-label="Default select example" id="sede" name="sede">
+                                                    <option th:each="s : ${listaSedes}"
+                                                            th:value="${s.idsede}" th:text="${s.nomsede}">
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <button class="btn btn-primary" type="submit"><i class="fas fa-save"></i> Agregar cita</button>
+                                        </form>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="medico">Selecciona Medico:</label>
-        <select class="form-control" id="medico" name="medico">
-            <option th:each="m : ${listaMedicos}"
-                    th:value="${m.idmedico}" th:text="${m.nommedico + ' ' + m.apellido}">
-            </option>
-        </select>
 
-    </div>
-    <div class="form-group">
-        <label for="horario">Selecciona Horario:</label>
-        <select class="form-control" id="horario" name="horario">
-            <option th:each="h : ${listaHorarios}"
-                    th:value="${h.idhorario}" th:text="${h.fechaHorario}">
-            </option>
-        </select>
-
-    </div>
-
-    <div class="form-group">
-        <label for="horario">Selecciona Sedes:</label>
-        <select class="form-control" id="sede" name="sede">
-            <option th:each="s : ${listaSedes}"
-                    th:value="${s.idsede}" th:text="${s.nomsede}">
-            </option>
-        </select>
-
-    </div>
-
-
-    <button class="btn btn-primary" type="submit">Agregar cita</button>
-</form>
-
-
-<div class="card">
-    <div class="card-header">
-        Lista de Cita
-    </div>
-    <div class="card-body">
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">NombrePaciente</th>
-                <th scope="col">nombreMedico</th>
-                <th scope="col">sede</th>
-                <th scope="col">especialidad</th>
-                <th scope="col">fechacita</th>
-                <th scope="col">acciones</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:text="Sede">
-                <td th:text="sede id"></td>
-                <td th:text="sede nombre"></td>
-                <td th:text="sede direccion"></td>
-                <td th:text="sede telefono"></td>
-                <td th:text="forenkey paciente"></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
 </body>
 </html>
