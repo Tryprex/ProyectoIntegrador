@@ -9,6 +9,8 @@
           rel="stylesheet"/>
     <link th:href="@{/styles/bootstrap/home.css}"
           rel="stylesheet"/>
+    <link th:href="@{/styles/bootstrap/footer.css}"
+          rel="stylesheet"/>
     <link th:href="@{/styles/fontawesome/all.css}"
           rel="stylesheet"/>
     <script th:src="@{/scripts/bootstrap/bootstrap.bundle.js}"
@@ -22,7 +24,7 @@
 <body>
 <nav th:fragment="menu" class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-        <a class="navbar-brand" th:href="@{/login}">EsSalud</a>
+        <a class="navbar-brand" th:href="@{/home}">EsSalud</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -48,8 +50,18 @@
                 </li>
             </ul>
         </div>
+        <a class="navbar-brand" th:href="@{/login}">Salir</a>
     </div>
-
 </nav>
+<footer th:fragment="footer">
+    <div class="contacto">
+        <p>Sede Central: Av. Arenales N° 1402 Jesús María, Lima 11 - Perú</p>
+        <p>Teléfonos: (511) 265-6000 / (511) 265-7000</p>
+    </div>
+    <div class="links">
+        <p><a href="https://www.essalud.gob.pe">EsSalud</a></p>
+        <p><a href="https://www.mintrabajo.gob.pe">Ministerio de Trabajo y Promoción del Empleo</a></p>
+    </div>
+</footer>
 </body>
 </html>

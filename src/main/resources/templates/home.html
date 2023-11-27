@@ -83,6 +83,40 @@
 <br>
 <br>
 
+<footer th:replace="~{layout::footer}">
+
+</footer>
+
 
 </body>
 </html>
+
+
+
+
+<style>
+    footer {
+    background-color: #212529;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.contacto, .links {
+    width: 30%;
+}
+
+.contacto p, .links p {
+    margin: 0;
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+</style>
