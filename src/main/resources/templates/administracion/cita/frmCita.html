@@ -5,66 +5,59 @@
     <title>Cita</title>
 </head>
 <body>
-<script th:src="@{/scripts/web/backoffice/paciente/frmMantPaciente.js}"
-        type="text/javascript"></script>
+<script th:src="@{/scripts/web/backoffice/paciente/frmMantPaciente.js}" type="text/javascript"></script>
 <nav th:replace="~{layout::menu}"></nav>
 
-
-
-    <div class="container py-1 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-xl-10">
-                <div class="card bg-light">
-                    <div class="card-body">
-                        <h4 class="text-center">Registra tu Cita</h4>
-                        <hr>
-                        <div class="row">
-                            <!-- Columna 1 del formulario de registro -->
-                            <div class="col-md-6">
-                                <div>
-                                    <div class="col-md-6">
-                                        <form action="/cita" method="POST">
-                                            <div class="mb-3">
-                                                <label class="form-label" for="paciente">Selecciona paciente:</label>
-                                                <select class="form-select" aria-label="Default select example" id="paciente" name="paciente">
-                                                    <option th:each="paciente : ${listaPacientes}"
-                                                            th:value="${paciente.idpaciente}"
-                                                            th:text="${paciente.nombres + ' ' + paciente.apellidospa + ' ' + paciente.apellidosma}">
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="form-label" for="medico">Selecciona Medico:</label>
-                                                <select class="form-select" aria-label="Default select example" id="medico" name="medico">
-                                                    <option th:each="m : ${listaMedicos}"
-                                                            th:value="${m.idmedico}" th:text="${m.nommedico + ' ' + m.apellido}">
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="form-label" for="horario">Selecciona Horario:</label>
-                                                <select class="form-select" aria-label="Default select example" id="horario" name="horario">
-                                                    <option th:each="h : ${listaHorarios}"
-                                                            th:value="${h.idhorario}" th:text="${h.fechaHorario}">
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="form-label" for="horario">Selecciona Sedes:</label>
-                                                <select class="form-select" aria-label="Default select example" id="sede" name="sede">
-                                                    <option th:each="s : ${listaSedes}"
-                                                            th:value="${s.idsede}" th:text="${s.nomsede}">
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <button class="btn btn-primary" type="submit"><i class="fas fa-save"></i> Agregar cita</button>
-                                        </form>
+<div class="container py-1 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-xl-10">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h4 class="text-center">Registra tu Cita</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div>
+                                <div class="col-md-6">
+                                    <form action="/cita" method="POST">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="paciente">Selecciona paciente:</label>
+                                            <select class="form-select" aria-label="Default select example" id="paciente" name="paciente" required>
+                                                <option th:each="paciente : ${listaPacientes}" th:value="${paciente.idpaciente}" th:text="${paciente.nombres + ' ' + paciente.apellidospa + ' ' + paciente.apellidosma}"></option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="medico">Selecciona Medico:</label>
+                                            <select class="form-select" aria-label="Default select example" id="medico" name="medico" required>
+                                                <option th:each="m : ${listaMedicos}" th:value="${m.idmedico}" th:text="${m.nommedico + ' ' + m.apellido}"></option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="horario">Selecciona Horario:</label>
+                                            <select class="form-select" aria-label="Default select example" id="horario" name="horario" required>
+                                                <option th:each="h : ${listaHorarios}" th:value="${h.idhorario}" th:text="${h.fechaHorario}"></option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="sede">Selecciona Sedes:</label>
+                                            <select class="form-select" aria-label="Default select example" id="sede" name="sede" required>
+                                                <option th:each="s : ${listaSedes}" th:value="${s.idsede}" th:text="${s.nomsede}"></option>
+                                            </select>
+                                        </div>
+                                        <button class="btn btn-primary" type="submit"><i class="fas fa-save"></i> Agregar cita</button>
+                                    </form>
+                                </div>
                             </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="http://www.essalud.gob.pe/wp-content/uploads/essalud_en_linea_servic.jpg" alt="Essalud Imagen" class="img-fluid">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
                 <script>
                     window.watsonAssistantChatOptions = {
